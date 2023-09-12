@@ -1,0 +1,12 @@
+﻿生成启动时间为 2018/1/27 1:11:29。
+     1>项目“H:\Remote\Client\Client\Client.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         D:\vs2015\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt Client.cpp
+         Client.cpp
+     1>h:\remote\client\client\client.cpp(14): error C2664: “HMODULE LoadLibraryW(LPCWSTR)”: 无法将参数 1 从“const char [8]”转换为“LPCWSTR”
+         h:\remote\client\client\client.cpp(14): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>已完成生成项目“H:\Remote\Client\Client\Client.vcxproj”(Rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.75

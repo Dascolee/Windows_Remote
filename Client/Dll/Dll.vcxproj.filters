@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="通讯引擎">
+      <UniqueIdentifier>{2f07c14f-b21a-4ea1-a485-3777f5c31b77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="登入信息">
+      <UniqueIdentifier>{11384f59-3d0e-467c-94a4-e7b12340b133}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="内核引擎">
+      <UniqueIdentifier>{33e5b59c-1fa8-41b1-b048-f88379e50615}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="工程">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="远程消息">
+      <UniqueIdentifier>{29d89e5d-ae3c-4eef-ab6c-89e45910f018}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="辅助">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="远程进程管理">
+      <UniqueIdentifier>{81739e64-8626-4bbf-84bf-2bf736abf09f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="远程进程管理\进程线程">
+      <UniqueIdentifier>{a3671697-d0f0-4836-b1ac-426a6b079422}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="远程进程管理\进程句柄">
+      <UniqueIdentifier>{7648b196-a468-4478-8a0e-4d04be446777}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="远程进程管理\进程模块">
+      <UniqueIdentifier>{374df531-7799-46ee-9e63-8cc69bac534d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Cmd终端管理">
+      <UniqueIdentifier>{df74235f-cf5d-4d31-94ab-ac7af05987f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="远程窗口管理">
+      <UniqueIdentifier>{77c98b12-6329-4b15-8300-01c3e54087f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="远程控制">
+      <UniqueIdentifier>{95bec7cb-002c-4594-a28f-889328da8b0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="文件管理">
+      <UniqueIdentifier>{7bafdcf5-d4ef-44ef-aa2e-3547271a08d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="服务管理">
+      <UniqueIdentifier>{f271da07-2342-4781-8b3a-d7e14de8e79e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="语音管理">
+      <UniqueIdentifier>{bf6c2832-0280-41e9-b4dc-388250a8ff7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="注册表管理">
+      <UniqueIdentifier>{a6b9d650-d939-43b3-99e6-dd650a6fa636}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="数据结构">
+      <UniqueIdentifier>{49be7cd1-fde8-406b-a205-ffa45d8a17a7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="_IOCPClient.h">
+      <Filter>通讯引擎</Filter>
+    </ClInclude>
+    <ClInclude Include="Login.h">
+      <Filter>登入信息</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>辅助</Filter>
+    </ClInclude>
+    <ClInclude Include="zconf.h">
+      <Filter>辅助</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib.h">
+      <Filter>辅助</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer.h">
+      <Filter>数据结构</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager.h">
+      <Filter>内核引擎</Filter>
+    </ClInclude>
+    <ClInclude Include="KernelManager.h">
+      <Filter>内核引擎</Filter>
+    </ClInclude>
+    <ClInclude Include="Dll.h">
+      <Filter>工程</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoteMessageManager.h">
+      <Filter>远程消息</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>辅助</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessManager.h">
+      <Filter>远程进程管理</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessThreadManager.h">
+      <Filter>远程进程管理\进程线程</Filter>
+    </ClInclude>
+    <ClInclude Include="SeEnumThreadInfoByNtQuerySystemInformation.h">
+      <Filter>远程进程管理\进程线程</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessHandleManager.h">
+      <Filter>远程进程管理\进程句柄</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessModuleManager.h">
+      <Filter>远程进程管理\进程模块</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdManager.h">
+      <Filter>Cmd终端管理</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowManager.h">
+      <Filter>远程窗口管理</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoteController.h">
+      <Filter>远程控制</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenSpy.h">
+      <Filter>远程控制</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManager.h">
+      <Filter>文件管理</Filter>
+    </ClInclude>
+    <ClInclude Include="ServiceManager.h">
+      <Filter>服务管理</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioManager.h">
+      <Filter>语音管理</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio.h">
+      <Filter>语音管理</Filter>
+    </ClInclude>
+    <ClInclude Include="RegisterManager.h">
+      <Filter>注册表管理</Filter>
+    </ClInclude>
+    <ClInclude Include="RegisterOperation.h">
+      <Filter>注册表管理</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Dll.cpp">
+      <Filter>工程</Filter>
+    </ClCompile>
+    <ClCompile Include="_IOCPClient.cpp">
+      <Filter>通讯引擎</Filter>
+    </ClCompile>
+    <ClCompile Include="Login.cpp">
+      <Filter>登入信息</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer.cpp">
+      <Filter>数据结构</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager.cpp">
+      <Filter>内核引擎</Filter>
+    </ClCompile>
+    <ClCompile Include="KernelManager.cpp">
+      <Filter>内核引擎</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoteMessageManager.cpp">
+      <Filter>远程消息</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessManager.cpp">
+      <Filter>远程进程管理</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessThreadManager.cpp">
+      <Filter>远程进程管理\进程线程</Filter>
+    </ClCompile>
+    <ClCompile Include="SeEnumThreadInfoByNtQuerySystemInformation.cpp">
+      <Filter>远程进程管理\进程线程</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessHandleManager.cpp">
+      <Filter>远程进程管理\进程句柄</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessModuleManager.cpp">
+      <Filter>远程进程管理\进程模块</Filter>
+    </ClCompile>
+    <ClCompile Include="CmdManager.cpp">
+      <Filter>Cmd终端管理</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowManager.cpp">
+      <Filter>远程窗口管理</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoteController.cpp">
+      <Filter>远程控制</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenSpy.cpp">
+      <Filter>远程控制</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManager.cpp">
+      <Filter>文件管理</Filter>
+    </ClCompile>
+    <ClCompile Include="ServiceManager.cpp">
+      <Filter>服务管理</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioManager.cpp">
+      <Filter>语音管理</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio.cpp">
+      <Filter>语音管理</Filter>
+    </ClCompile>
+    <ClCompile Include="RegisterManager.cpp">
+      <Filter>注册表管理</Filter>
+    </ClCompile>
+    <ClCompile Include="RegisterOperation.cpp">
+      <Filter>注册表管理</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source.def">
+      <Filter>工程</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Dll.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="res\msg.wav">
+      <Filter>资源文件</Filter>
+    </Media>
+  </ItemGroup>
+</Project>

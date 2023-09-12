@@ -1,0 +1,240 @@
+void CServerDlg::OnSize(UINT nType, int cx, int cy)
+{
+	CDialogEx::OnSize(nType, cx, cy);
+	
+	//重绘标题栏
+	CRect WindowRect;
+	GetWindowRect(&WindowRect);
+	WindowRect.OffsetRect(-WindowRect.left, -WindowRect.top);
+	WindowRect.DeflateRect(8, 8);
+
+	CRgn Range;
+	BOOL bl = Range.CreateRectRgnIndirect(&WindowRect);
+	if (bl)
+	{
+		SetWindowRgn(Range, FALSE);
+	}
+	Range.Detach();
+}
+
+
+//重绘标题栏
+LRESULT CServerDlg::DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam)
+{
+	LRESULT ReturnValue = CDialog::DefWindowProc(message, wParam, lParam);
+
+	if (!::IsWindow(m_hWnd))
+	{
+		return ReturnValue;
+	}
+	if (message == WM_MOVE || message == WM_PAINT || message == WM_NCPAINT || message == WM_NCACTIVATE || message == WM_NOTIFY)
+	{
+		CDC* WindowDC = GetWindowDC();
+		if (WindowDC)
+		{
+			DrawTitleBar(WindowDC);
+		}
+		ReleaseDC(WindowDC);
+	}
+	return ReturnValue;
+}
+
+void CServerDlg::OnNcLButtonDown(UINT nHitTest, CPoint point)
+{
+	if (m_TitleExitButton.PtInRect(point))
+	{
+		SendMessage(WM_CLOSE);
+	}
+	else if (m_TitleMinButton.PtInRect(point))
+	{
+		SendMessage(WM_SYSCOMMAND, SC_MINIMIZE, MAKELPARAM(point.x, point.y));
+	}
+	else if (m_TitleOptionButton.PtInRect(point))
+	{
+
+		CMenu Menu;
+		Menu.LoadMenu(IDR_MENU_SERVER_DIALOG_MAIN);
+
+		CPoint Point;
+		GetCursorPos(&Point);
+		SetForegroundWindow();
+		Menu.GetSubMenu(0)->TrackPopupMenu(TPM_LEFTALIGN | TPM_RIGHTBUTTON, Point.x, Point.y, this);
+	}
+	else if (!IsZoomed())
+	{
+		Default();
+	}
+
+
+	CDialogEx::OnNcLButtonDown(nHitTest, point);
+}
+
+
+void CServerDlg::OnNcMouseMove(UINT nHitTest, CPoint point)
+{
+	CDC* pDC = GetWindowDC();
+	CDC* pDisplayMemDC = new CDC;
+	pDisplayMemDC->CreateCompatibleDC(pDC);
+	CBitmap* pBitmap = new CBitmap;
+	CBitmap* pOldBitmap;
+	CRect rtWnd, rtButton;
+
+	if (pDC)
+	{
+		GetWindowRect(&rtWnd);
+
+		//关闭button
+		if (m_TitleExitButton.PtInRect(point))
+		{
+			pBitmap->LoadBitmap(IDB_BITMAP_EXIT_FOC);
+		}		
+		else
+		{
+			pBitmap->LoadBitmap(IDB_BITMAP_EXIT_NOR);
+		}		
+		rtButton = m_TitleExitButton;
+		rtButton.OffsetRect(-rtWnd.left, -rtWnd.top);
+		pOldBitmap = (CBitmap*)pDisplayMemDC->SelectObject(pBitmap);
+		pDC->BitBlt(rtButton.left, rtButton.top, rtButton.Width(), rtButton.Height(), pDisplayMemDC, 0, 0, SRCCOPY);
+		pDisplayMemDC->SelectObject(pOldBitmap);
+		pBitmap->DeleteObject();
+
+		//最小化button
+		if (m_TitleMinButton.PtInRect(point))
+		{
+			pBitmap->LoadBitmap(IDB_BITMAP_MIN_FOC);
+		}		
+		else
+		{
+			pBitmap->LoadBitmap(IDB_BITMAP_MIN_NOR);
+		}			
+		rtButton = m_TitleMinButton;
+		rtButton.OffsetRect(-rtWnd.left, -rtWnd.top);
+		pOldBitmap = (CBitmap*)pDisplayMemDC->SelectObject(pBitmap);
+		pDC->BitBlt(rtButton.left, rtButton.top, rtButton.Width(), rtButton.Height(), pDisplayMemDC, 0, 0, SRCCOPY);
+		pDisplayMemDC->SelectObject(pOldBitmap);
+		pBitmap->DeleteObject();
+
+		//选项button
+		if (m_TitleOptionButton.PtInRect(point))
+		{
+			pBitmap->LoadBitmap(IDB_BITMAP_OPTION_FOC);
+		}		
+		else
+		{
+			pBitmap->LoadBitmap(IDB_BITMAP_OPTION_NOR);
+		}		
+		rtButton = m_TitleOptionButton;
+		rtButton.OffsetRect(-rtWnd.left, -rtWnd.top);
+		pOldBitmap = (CBitmap*)pDisplayMemDC->SelectObject(pBitmap);
+		pDC->BitBlt(rtButton.left, rtButton.top, rtButton.Width(), rtButton.Height(), pDisplayMemDC, 0, 0, SRCCOPY);
+		pDisplayMemDC->SelectObject(pOldBitmap);
+		pBitmap->DeleteObject();
+	}
+
+	ReleaseDC(pDisplayMemDC);
+	ReleaseDC(pDC);
+	delete pDisplayMemDC;
+	delete pBitmap;
+
+	CDialogEx::OnNcMouseMove(nHitTest, point);
+}
+
+
+void CServerDlg::DrawTitleBar(CDC *pDC)
+{
+	if (m_hWnd)
+	{
+		//选择白色
+		CBrush Brush(RGB(255, 255, 255));
+		CBrush* pOldBrush = pDC->SelectObject(&Brush);
+
+		//标题栏位置
+		CRect TitlePosition;
+		//按钮位置
+		CRect ButtonPosition;
+
+		CRect WndindowRect;
+		GetWindowRect(&WndindowRect);
+		//取得标题栏的位置
+		TitlePosition.left = GetSystemMetrics(SM_CXFRAME);
+		TitlePosition.top = GetSystemMetrics(SM_CYFRAME) + 3;
+		TitlePosition.right = WndindowRect.right - WndindowRect.left - GetSystemMetrics(SM_CXFRAME);
+		TitlePosition.bottom = TitlePosition.top + GetSystemMetrics(SM_CYSIZE);
+
+
+		CPoint point;
+		//填充顶部框架
+		point.x = WndindowRect.Width();
+		point.y = GetSystemMetrics(SM_CYSIZE) + GetSystemMetrics(SM_CYFRAME) + 9;
+		pDC->PatBlt(0, 0, point.x, point.y, PATCOPY);
+		////填充左侧框架
+		//point.x = GetSystemMetrics(SM_CXFRAME) + 1;
+		//point.y = WndindowRect.Height();
+		//pDC->PatBlt(0, 0, point.x, point.y, PATCOPY);
+		////填充底部框架
+		//point.x = WndindowRect.Width();
+		//point.y = GetSystemMetrics(SM_CYFRAME) + 1;
+		//pDC->PatBlt(0, WndindowRect.Height() - point.y, point.x, point.y, PATCOPY);
+		////填充右侧框架
+		//point.x = GetSystemMetrics(SM_CXFRAME) + 1;
+		//point.y = WndindowRect.Height();
+		//pDC->PatBlt(WndindowRect.Width() - point.x, 0, point.x, point.y, PATCOPY);
+
+		pDC->SelectObject(pOldBrush);
+
+		//重画图标
+		m_rtIcon.left = 10;// WndindowRect.Width();
+		m_rtIcon.top = GetSystemMetrics(SM_CYFRAME);
+		m_rtIcon.right = m_rtIcon.left + 40;
+		m_rtIcon.bottom = m_rtIcon.top + 40;
+		::DrawIconEx(pDC->m_hDC, m_rtIcon.left, m_rtIcon.top, m_hIcon,
+			m_rtIcon.Width(), m_rtIcon.Height(), 0, NULL, DI_NORMAL);
+		m_rtIcon.OffsetRect(WndindowRect.TopLeft());
+
+		//准备画XP风格按钮
+		CBitmap* pBitmap = new CBitmap;
+		CBitmap* pOldBitmap;
+		CDC* pDisplayMemDC = new CDC;
+		pDisplayMemDC->CreateCompatibleDC(pDC);
+
+		//重画关闭button
+		ButtonPosition.left = TitlePosition.right - 40;
+		ButtonPosition.top = TitlePosition.top;
+		ButtonPosition.right = ButtonPosition.left + 35;
+		ButtonPosition.bottom = ButtonPosition.top + 40;
+		pBitmap->LoadBitmap(IDB_BITMAP_EXIT_NOR);
+		pOldBitmap = (CBitmap*)pDisplayMemDC->SelectObject(pBitmap);
+		pDC->BitBlt(ButtonPosition.left, ButtonPosition.top, ButtonPosition.Width(), ButtonPosition.Height(), pDisplayMemDC, 0, 0, SRCCOPY);
+		pDisplayMemDC->SelectObject(pOldBitmap);
+		m_TitleExitButton = ButtonPosition;
+		m_TitleExitButton.OffsetRect(WndindowRect.TopLeft());
+		pBitmap->DeleteObject();
+
+		//重画最小化button
+		ButtonPosition.right = ButtonPosition.left - 3;
+		ButtonPosition.left = ButtonPosition.right - 40;
+		pBitmap->LoadBitmap(IDB_BITMAP_MIN_NOR);
+		pOldBitmap = (CBitmap*)pDisplayMemDC->SelectObject(pBitmap);
+		pDC->BitBlt(ButtonPosition.left, ButtonPosition.top, ButtonPosition.Width(), ButtonPosition.Height(), pDisplayMemDC, 0, 0, SRCCOPY);
+		pDisplayMemDC->SelectObject(pOldBitmap);
+		m_TitleMinButton = ButtonPosition;
+		m_TitleMinButton.OffsetRect(WndindowRect.TopLeft());
+		pBitmap->DeleteObject();
+
+		//重画选项button
+		ButtonPosition.right = ButtonPosition.left - 3;
+		ButtonPosition.left = ButtonPosition.right - 40;
+		pBitmap->LoadBitmap(IDB_BITMAP_OPTION_NOR);
+		pOldBitmap = (CBitmap*)pDisplayMemDC->SelectObject(pBitmap);
+		pDC->BitBlt(ButtonPosition.left, ButtonPosition.top, ButtonPosition.Width(), ButtonPosition.Height(), pDisplayMemDC, 0, 0, SRCCOPY);
+		pDisplayMemDC->SelectObject(pOldBitmap);
+		m_TitleOptionButton = ButtonPosition;
+		m_TitleOptionButton.OffsetRect(WndindowRect.TopLeft());
+		pBitmap->DeleteObject();
+
+		ReleaseDC(pDisplayMemDC);
+		delete pDisplayMemDC;
+		delete pBitmap;
+	}
+}

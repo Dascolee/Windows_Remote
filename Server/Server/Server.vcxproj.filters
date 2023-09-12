@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="主对话框">
+      <UniqueIdentifier>{1050d6a0-1071-421e-98d8-b656cb90506a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="真彩ToolBar">
+      <UniqueIdentifier>{10fabf2f-d447-453d-969c-71859f6d1a58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="本地设置管理对话框">
+      <UniqueIdentifier>{3b626b3c-70cf-4e9b-a784-5a1a6f188ad4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_ConfigFlie">
+      <UniqueIdentifier>{87cc543f-a6de-4e1f-9ae0-f7e7edba5ee6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="通讯引擎">
+      <UniqueIdentifier>{c9f225f2-531a-49ea-af32-4d839f982081}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="数据结构">
+      <UniqueIdentifier>{da89a02f-2571-4bd9-82e3-227413153de0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="远程消息">
+      <UniqueIdentifier>{753648f8-6a27-4582-800c-6ce8ef3bd00c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="客户端生成">
+      <UniqueIdentifier>{7a11f919-e22d-4ac5-a2c0-064ef8dd1ab3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="辅助">
+      <UniqueIdentifier>{c127e55c-2daa-4bbb-855f-6437cd8e1783}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="原生成">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="进程管理">
+      <UniqueIdentifier>{e93a107a-458d-4e71-a5c4-b26a6bd150cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="线程管理">
+      <UniqueIdentifier>{7de8b3b1-8a1d-4109-9805-6c7d48f614da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="句柄管理">
+      <UniqueIdentifier>{1da9edc2-b20e-4bc6-b920-a64256c84b18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="模块管理">
+      <UniqueIdentifier>{d78fd8f5-cfcc-4349-93a2-69fc34ecd733}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMD管理对话框">
+      <UniqueIdentifier>{aaa7fb50-5eed-4c00-bca7-56939b1dd2c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="进程管理\远程打开进程">
+      <UniqueIdentifier>{1db6f671-037a-42bf-b7b9-8d47e3a69c84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="远程窗口管理">
+      <UniqueIdentifier>{0b4a356a-8ab0-4187-9452-825ae5fa580b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="远程控制">
+      <UniqueIdentifier>{f5466e37-3c18-4801-be45-435624168bd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="文件管理">
+      <UniqueIdentifier>{dc2ae826-27cf-47ee-81d7-bd1ae0a3d163}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="文件管理\新建文件夹窗口">
+      <UniqueIdentifier>{6df841c6-e518-4127-8e5f-207f43b01486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="服务管理">
+      <UniqueIdentifier>{d60afbce-97a8-4f18-a42e-80558c75f12d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="音频管理">
+      <UniqueIdentifier>{f619067e-db4d-4a37-bc12-f8771ed1684b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="注册表管理">
+      <UniqueIdentifier>{9dffb3fd-1d44-4ff8-be4a-b6e11d4beba1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Server.h">
+      <Filter>原生成</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>原生成</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>原生成</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerDlg.h">
+      <Filter>主对话框</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgServerSet.h">
+      <Filter>本地设置管理对话框</Filter>
+    </ClInclude>
+    <ClInclude Include="TrueColorToolBar.h">
+      <Filter>真彩ToolBar</Filter>
+    </ClInclude>
+    <ClInclude Include="_ConfigFlie.h">
+      <Filter>_ConfigFlie</Filter>
+    </ClInclude>
+    <ClInclude Include="_IOCPServer.h">
+      <Filter>通讯引擎</Filter>
+    </ClInclude>
+    <ClInclude Include="_CriticalSection.h">
+      <Filter>通讯引擎</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer.h">
+      <Filter>数据结构</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgRemoteMessageDlg.h">
+      <Filter>远程消息</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgCreateClient.h">
+      <Filter>客户端生成</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib.h">
+      <Filter>辅助</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgProcessManager.h">
+      <Filter>进程管理</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgThreaderManager.h">
+      <Filter>线程管理</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgHandleManager.h">
+      <Filter>句柄管理</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgModuleManager.h">
+      <Filter>模块管理</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgCmdManager.h">
+      <Filter>CMD管理对话框</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgRemoteOpenProcess.h">
+      <Filter>进程管理\远程打开进程</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgWindowManager.h">
+      <Filter>远程窗口管理</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>辅助</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgRemoteControl.h">
+      <Filter>远程控制</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgFileManager.h">
+      <Filter>文件管理</Filter>
+    </ClInclude>
+    <ClInclude Include="zconf.h">
+      <Filter>辅助</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgFileNewFolder.h">
+      <Filter>文件管理\新建文件夹窗口</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgFileMode.h">
+      <Filter>文件管理</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgServiceManager.h">
+      <Filter>服务管理</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgAudioManager.h">
+      <Filter>音频管理</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio.h">
+      <Filter>音频管理</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgRegisterManager.h">
+      <Filter>注册表管理</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ServerDlg.cpp">
+      <Filter>主对话框</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgServerSet.cpp">
+      <Filter>本地设置管理对话框</Filter>
+    </ClCompile>
+    <ClCompile Include="TrueColorToolBar.cpp">
+      <Filter>真彩ToolBar</Filter>
+    </ClCompile>
+    <ClCompile Include="_ConfigFlie.cpp">
+      <Filter>_ConfigFlie</Filter>
+    </ClCompile>
+    <ClCompile Include="_IOCPServer.cpp">
+      <Filter>通讯引擎</Filter>
+    </ClCompile>
+    <ClCompile Include="_CriticalSection.cpp">
+      <Filter>通讯引擎</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer.cpp">
+      <Filter>数据结构</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgRemoteMessageDlg.cpp">
+      <Filter>远程消息</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCreateClient.cpp">
+      <Filter>客户端生成</Filter>
+    </ClCompile>
+    <ClCompile Include="Server.cpp">
+      <Filter>原生成</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>原生成</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgProcessManager.cpp">
+      <Filter>进程管理</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgThreaderManager.cpp">
+      <Filter>线程管理</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgHandleManager.cpp">
+      <Filter>句柄管理</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgModuleManager.cpp">
+      <Filter>模块管理</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCmdManager.cpp">
+      <Filter>CMD管理对话框</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgRemoteOpenProcess.cpp">
+      <Filter>进程管理\远程打开进程</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgWindowManager.cpp">
+      <Filter>远程窗口管理</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgRemoteControl.cpp">
+      <Filter>远程控制</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgFileManager.cpp">
+      <Filter>文件管理</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgFileNewFolder.cpp">
+      <Filter>文件管理\新建文件夹窗口</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgFileMode.cpp">
+      <Filter>文件管理</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgServiceManager.cpp">
+      <Filter>服务管理</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgAudioManager.cpp">
+      <Filter>音频管理</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio.cpp">
+      <Filter>音频管理</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgRegisterManager.cpp">
+      <Filter>注册表管理</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Server.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Server.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\cur\MDrag.cur">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\cur\SDrag.cur">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Server.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\toolbar1.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\Bitmap\Finder.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\Bitmap\Main.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\bitmap\toolbar1.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\Bitmap\ToolBar_File.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\bitmap\toolbar_.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\Dword.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\Father.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\File.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\String.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="x86.asm">
+      <Filter>远程控制</Filter>
+    </MASM>
+  </ItemGroup>
+</Project>
